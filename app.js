@@ -8,6 +8,8 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+const serverless = require('serverless-http');
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -18,3 +20,4 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 module.exports = app;
+module.exports.handler = serverless(app);
