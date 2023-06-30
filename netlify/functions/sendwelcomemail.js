@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+const fetch = require("node-fetch");
 exports.handler = async function (event, context) {
     // your server-side functionality
     await fetch(`https://api.postmarkapp.com/email`, {
