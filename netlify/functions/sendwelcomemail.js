@@ -9,11 +9,11 @@ const handler = async function(event) {
         };
     }
 
-    const requestBody = JSON.parse(event.body) as {
-        subscriberName: string;
-        subscriberEmail: string;
-        inviteeEmail: string;
-    };
+    // const requestBody = JSON.parse(event.body) as {
+    //     subscriberName: string;
+    //     subscriberEmail: string;
+    //     inviteeEmail: string;
+    // };
 
     //automatically generated snippet from the email preview
     //sends a request to an email handler for a subscribed email
