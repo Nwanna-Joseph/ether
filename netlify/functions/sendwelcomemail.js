@@ -4,7 +4,7 @@ exports.handler = async function (event, context) {
      fetch(`https://api.postmarkapp.com/email`, {
         headers: {
             "Accept": "application/json",
-            "Content-Type":"application/json"
+            "Content-Type":"application/json",
             "X-Postmark-Server-Token":"fad8a96f-4097-4a86-a57c-39c39d7bc582"
         },
         method: "POST",
