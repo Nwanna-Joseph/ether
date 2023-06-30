@@ -1,6 +1,5 @@
 import { Handler } from "@netlify/functions";
 import fetch from "node-fetch";
-import postmark from "postmark"
 
 const handler = async function(event) {
     if (event.body === null) {
