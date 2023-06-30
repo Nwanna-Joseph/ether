@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 exports.handler = async function (event, context) {
     // your server-side functionality
-    await fetch(`https://api.postmarkapp.com/email`, {
+     fetch(`https://api.postmarkapp.com/email`, {
         headers: {
             "Accept": "application/json",
             "Content-Type":"application/json"
