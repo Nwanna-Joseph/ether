@@ -3,12 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "netlify_install": "npm install express netlify-lambda serverless-http",
-    "start_netlify": "./node_modules/.bin/netlify-lambda serve src",
-    "build_netlify": "./node_modules/.bin/netlify-lambda build src",
-    "build_preview": "netlify build && netlify dev",
-    "netlify_link": "netlify link"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "@netlify/functions": "^1.6.0",

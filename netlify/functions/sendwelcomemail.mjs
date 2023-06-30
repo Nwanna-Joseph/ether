@@ -17,9 +17,9 @@ const handler: Handler = async function(event) {
 
     //automatically generated snippet from the email preview
     //sends a request to an email handler for a subscribed email
-    await fetch(`${process.env.URL}/.netlify/functions/emails/welcome`, {
+    await fetch(`https://cosmic-torte-fa1094.netlify.app/.netlify/functions/emails/welcome`, {
         headers: {
-            "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET as string,
+            "netlify-emails-secret": "",
         },
         method: "POST",
         body: JSON.stringify({
