@@ -18,6 +18,8 @@ exports.handler = async function (event, context) {
     // const res = await info.json()
     return {
         statusCode: 200,
-        body: JSON.stringify({}),
+        body: JSON.stringify({
+            "lll":`${process.env.URL}`
+        }),
     };
 };
