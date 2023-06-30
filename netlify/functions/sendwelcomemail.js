@@ -19,6 +19,6 @@ exports.handler = async function (event, context) {
     });
     return {
         statusCode: 200,
-        body: info,
+        body: JSON.stringify(info),
     };
 };
