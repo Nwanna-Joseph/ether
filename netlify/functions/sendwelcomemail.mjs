@@ -1,7 +1,7 @@
 import { Handler } from "@netlify/functions";
 import fetch from "node-fetch";
 
-const handler: Handler = async function(event) {
+const handler = async function(event) {
     if (event.body === null) {
         return {
             statusCode: 400,
