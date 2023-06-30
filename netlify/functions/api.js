@@ -10,3 +10,5 @@ router.get('/hello', (req, res) => res.send('Hello World!'));
 api.use('/api/', router);
 
 export const handler = serverless(api);
+
+// https://docs.netlify.com/functions/create/?fn-language=js
