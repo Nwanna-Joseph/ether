@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 exports.handler = async function (event, context) {
 
-    const info = await fetch(`https://api.paystack.co/charge"`, {
+    const info = await fetch(`https://api.paystack.co/transaction/initialize`, {
         headers: {
             `Authorization: Bearer ${process.env.PAYSTACK_SECRET}`,
             "Content-Type: application/json"
@@ -9,7 +9,7 @@ exports.handler = async function (event, context) {
         method: "POST",
         body: JSON.stringify({
             "email": "demouser@email.com",
-            "amount": "10000", //kobo
+            "amount": "10000", //kobo, 100 naira == 100 * 100 kobo
             "metadata": {
                 "custom_fields": [
                     {
