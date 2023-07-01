@@ -1,18 +1,24 @@
 import fetch from "node-fetch";
 exports.handler = async function (event, context) {
-    // your server-side functionality
-    const info = await fetch(`${process.env.URL}/.netlify/functions/emails/welcome`, {
+
+    const info = await fetch(`https://api.paystack.co/charge"`, {
         headers: {
-            "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,
+            `Authorization: Bearer ${process.env.PAYSTACK_SECRET}`,
+            "Content-Type: application/json"
         },
         method: "POST",
         body: JSON.stringify({
-            from: "gidejo3210@devswp.com",
-            to: "gidejo3210@devswp.com",
-            subject: "You've been subscribed",
-            parameters: {
-                name: "Andrechukwu",
-            },
+            "email": "demouser@email.com",
+            "amount": "10000", //kobo
+            "metadata": {
+                "custom_fields": [
+                    {
+                        "value": "makurdi",
+                        "display_name": "Donation for",
+                        "variable_name": "donation_for"
+                    }
+                ]
+            }
         }),
     });
     const res = await info.json()
