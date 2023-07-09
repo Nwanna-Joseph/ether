@@ -1,21 +1,16 @@
 import fetch from "node-fetch";
+import { initializeApp } from 'firebase-admin/app';
+
 exports.handler = async function (event, context) {
-    // your server-side functionality
-    const data = JSON.parse(event.body);
-    const info = await fetch(`${process.env.URL}/.netlify/functions/emails/welcome`, {
-        headers: {
-            "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,
-        },
-        method: "POST",
-        body: JSON.stringify({
-            from: "supportteam@flatmates.com",
-            to: data.m ,
-            subject: "Welcome to flatmates.ng",
-            parameters: {
-                name: data.m,
+    let reference = "4g16recolt"
+    const info = await fetch(`https://api.paystack.co/transaction/verify/${reference}`, {
+            headers: {
+                "Authorization": `Bearer ${process.env.PAYSTACK_SECRET}`,
+                "Content-Type": "application/json"
             },
-        }),
-    });
+            method: "GET"
+        })
+    ;
     const res = await info.json()
 
     let HEADERS = {
