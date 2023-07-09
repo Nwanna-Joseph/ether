@@ -1,6 +1,7 @@
 import fetch from "node-fetch";
 exports.handler = async function (event, context) {
     // your server-side functionality
+    console.log(event, console)
     const data = JSON.parse(event.body);
     const info = await fetch(`${process.env.URL}/.netlify/functions/emails/welcome`, {
         headers: {
