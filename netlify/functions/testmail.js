@@ -9,14 +9,18 @@ exports.handler = async function (event, context) {
         },
     })
     console.log("Mail body", mailBody)
-    const info = await fetch(`${process.env.URL}/.netlify/functions/emails/test`, {
-        headers: {
-            "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,
-        },
-        method: "POST",
-        body: mailBody,
-    });
-    const res = await info.json()
+    try {
+        const info = await fetch(`${process.env.URL}/.netlify/functions/emails/test`, {
+            headers: {
+                "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,
+            },
+            method: "POST",
+            body: mailBody,
+        });
+        const res = await info.json()
+    }catch (e){
+        console.log(e)
+    }
 
     let HEADERS = {
         'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Origin',
