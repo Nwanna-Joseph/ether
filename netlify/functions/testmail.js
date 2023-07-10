@@ -9,6 +9,8 @@ exports.handler = async function (event, context) {
         },
     })
     console.log("Mail body", mailBody)
+
+    let res = ''
     try {
         const info = await fetch(`${process.env.URL}/.netlify/functions/emails/test`, {
             headers: {
@@ -17,7 +19,7 @@ exports.handler = async function (event, context) {
             method: "POST",
             body: mailBody,
         });
-        const res = await info.json()
+        res = await info.json()
     }catch (e){
         console.log(e)
     }
