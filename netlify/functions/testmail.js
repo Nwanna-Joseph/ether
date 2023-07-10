@@ -1,8 +1,8 @@
 import fetch from "node-fetch";
 exports.handler = async function (event, context) {
     let mailBody = JSON.stringify({
-        from: process.env.APP_TEST_EMAIL ,
-        to: process.env.APP_TEST_EMAIL ,
+        from: "gidejo3210@devswp.com",
+        to: "gidejo3210@devswp.com" ,
         subject: "Email Test",
         parameters: {
             name:"Test Accounts",
