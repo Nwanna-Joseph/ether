@@ -5,7 +5,7 @@ exports.handler = async function (event, context) {
         to: process.env.APP_TEST_EMAIL ,
         subject: "flatmates.ng >> Email Test",
         parameters: {
-            name:"bhhkkhkhk",
+            name:"Test Accounts",
         },
     })
     console.log("Mail body", mailBody)
