@@ -1,19 +1,14 @@
 import fetch from "node-fetch";
 exports.handler = async function (event, context) {
-    // your server-side functionality
-    console.log(event, "_____"context)
-    // const data = JSON.parse(event.body);
-    // console.log(event.body)
-    // console.log(event.body.m)
-    const info = await fetch(`${process.env.URL}/.netlify/functions/emails/welcome`, {
+    const info = await fetch(`${process.env.URL}/.netlify/functions/emails/test`, {
         headers: {
             "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,
         },
         method: "POST",
         body: JSON.stringify({
-            from: "supportteam@flatmates.com",
-            to: event.body.m ,
-            subject: "Welcome to flatmates.ng",
+            from: process.env.APP_TEST_EMAIL,
+            to: process.env.APP_TEST_EMAIL ,
+            subject: "flatmates.ng >> Email Test",
             parameters: {
                 name:"bhhkkhkhk",
             },
