@@ -6,7 +6,7 @@ exports.handler = async function (event, context) {
         },
         method: "POST",
         body: JSON.stringify({
-            from: process.env.APP_TEST_EMAIL,
+            from: "gidejo3210@devswp.com",
             to: process.env.APP_TEST_EMAIL ,
             subject: "flatmates.ng >> Email Test",
             parameters: {
