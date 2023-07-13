@@ -7,14 +7,8 @@ exports.handler = async function (event, context) {
         console.log(e)
     }
     try {
-        const object = JSON.parse(event.body);
-        console.log(object)
-        console.log(object.content)
-    }catch (e){
-        console.log(e)
-    }
-    try {
-        console.log(content, destination, a, b, c)
+        const {content, destination, anime, ball, cat} = JSON.parse(event.body);
+        console.log(content, destination, anime, ball, cat)
     }catch (e){
         console.log(e)
     }
