@@ -1,6 +1,16 @@
 import fetch from "node-fetch";
 exports.handler = async function (event, context) {
-    const { content, destination, anime, ball, cat } = JSON.parse(event.body);
+    try {
+        console.log(event);
+        console.log(event.body);
+    }catch (e){
+        console.log(e)
+    }
+    try {
+        const {content, destination, anime, ball, cat} = JSON.parse(event.body);
+    }catch (e){
+        console.log(e)
+    }
     try {
         console.log(content, destination, a, b, c)
     }catch (e){
