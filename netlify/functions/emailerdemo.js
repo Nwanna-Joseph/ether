@@ -2,6 +2,7 @@ import fetch from "node-fetch";
 exports.handler = async function (event, context) {
 
     const {target} = JSON.parse(event.body);
+    console.log("Target:",target)
 
     const info = await fetch(`${process.env.URL}/.netlify/functions/emails/welcome`, {
         headers: {
@@ -11,13 +12,13 @@ exports.handler = async function (event, context) {
         body: JSON.stringify({
             from: `gidejo3210@devswp.com`,
             to: `gidejo3210@devswp.com` ,
-            subject: `Welcome ${target}`, //sanitize for xss
+            subject: `Welcome ${target}`,
             parameters: {
-                name:`${target}`, //sanitize for xss
+                name:`${target}`,
             },
         }),
     });
-    
+
     const res = await info.json()
 
     let HEADERS = {
